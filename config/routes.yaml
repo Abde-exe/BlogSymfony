@@ -1,3 +1,36 @@
-controllers:
-    resource: ../src/Controller/
-    type: attribute
+index:
+  path: /home
+  controller: App\Controller\HomeController::index
+articles:
+  path: /articles
+  controller: App\Controller\ArticleController::allArticles
+read-article:
+  path: /lire-article/{id}
+  controller: App\Controller\ArticleController::lire
+ajout-article:
+  path: /ajout-article
+  controller: App\Controller\ArticleController::ajout
+update-article:
+  path: /modif-article/{id}
+  controller: App\Controller\ArticleController::update
+delete-article:
+  path: /suppr-article/{id}
+  controller: App\Controller\ArticleController::delete
+auteurs:
+  path: /auteurs
+  controller: App\Controller\AuteurController::allAuteurs
+read-auteur:
+  path: /lire-auteur/{id}
+  controller: App\Controller\AuteurController::lire
+ajout-auteur:
+  path: /ajout-auteur
+  controller: App\Controller\AuteurController::ajout
+update-auteur:
+  path: /modif-auteur/{id}
+  controller: App\Controller\AuteurController::update
+delete-auteur:
+  path: /suppr-auteur/{id}
+  controller: App\Controller\AuteurController::delete
+# controllers:
+#   resource: ../src/Controller/
+#   type: attribute

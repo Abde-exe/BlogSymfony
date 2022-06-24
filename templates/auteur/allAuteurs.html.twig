@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- auteurs
+{% endblock %}
+
+{% block content %}
+	<div class="row d-flex justify-content-center text-center">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">id</th>
+					<th scope="col">Prenom</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Bio</th>
+					<th scope="col">Date de Naissance</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for auteur in auteurs %}
+
+					<tr>
+						<th scope="row">{{auteur.id}}</th>
+						<td>{{auteur.prenom}}</td>
+						<td>{{auteur.nom}}</td>
+						<td>{{auteur.biographie | slice(0,15)}}...</td>
+						<td>{{auteur.dateDeNaissance | date("d/m/y")}}</td>
+						<td>
+							<a href="{{path('read-auteur',{id:auteur.id})}}">Voir</a>
+						</td>
+
+					</tr>
+				{% endfor %}
+
+			</tbody>
+		</tbody>
+	</table>
+
+</div>{% endblock %}
