@@ -1,5 +1,5 @@
 index:
-  path: /home
+  path: /
   controller: App\Controller\HomeController::index
 articles:
   path: /articles
